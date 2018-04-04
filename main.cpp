@@ -15,11 +15,13 @@ int getnumber ()
 int main()
 {
     int lower_bound, upper_bound;
+    std::cout << "Enter lower bound" << std::endl;
+    std::cout << "Enter upper bound" << std::endl;
     lower_bound = getnumber();
     upper_bound = getnumber();
-    std::cout << "fff" << std::endl;
-    std::cout << lower_bound << std::endl;
-    std::cout << upper_bound << std::endl;
+    //std::cout << "fff" << std::endl;
+    //std::cout << lower_bound << std::endl;
+    //std::cout << upper_bound << std::endl;
 
     if (lower_bound < 1)
     {
@@ -45,25 +47,36 @@ int main()
         // If even, then definitely not prime
         if (i%2==0)
         {
-            std::cout << " is not prime due to being even" << i << std::endl;
+            //std::cout << " is not prime due to being even" << i << std::endl;
         }
         else
         {
-            for(j=upper_bound-1;j>=lower_bound;j--)
+            for(j=2;j<(i/2);j++)
             {
+                //std::cout << i << " i = " << " j = " << j << std::endl;
                 if (j%2==0)
                 {
-                    continue;
+                    //std::cout << j << std::endl;
+                    //std::cout << "j is even" << std::endl;
+
+                    //continue;
                 }
-                else if (i%j!=0)
+                else if (i%j==0)
                 {
                     NotPrime = true;
+                    //std::cout << j << std::endl;
+                    //std::cout << i << std::endl;
+                    //std::cout << "breaking" << std::endl;
                     break;
                 }
+                else
+                {
+                    //std::cout << "no condition met" << std::endl;
+                }
             }
-            if(not NotPrime)
+            if(NotPrime==false)
             {
-                std::cout <<  " appears to be prime" << i << std::endl;
+                std::cout << i <<  " appears to be prime" << std::endl;
             }
         }
     }
