@@ -1,4 +1,6 @@
 #include <iostream>
+//#include <sstream>
+
 
 // Stolen from BasiCalc
 int getnumber ()
@@ -9,13 +11,58 @@ int getnumber ()
     return number;
 }
 
-int main()
+// Arguments aaaa
+int main(int argc, char **argv)
 {
+    //std::stringstream ss;
     int lower_bound, upper_bound;
-    std::cout << "Enter lower bound" << std::endl;
-    std::cout << "Enter upper bound" << std::endl;
-    lower_bound = getnumber();
-    upper_bound = getnumber();
+
+    //std::cout << argv[1] << std::endl;
+    //std::cout << argc << " arguments" << std::endl;
+
+    if (argc != 3)
+    {
+        switch (argc)
+        {
+            case 0:
+                {
+                    std::cout << "No arguments whatsoever, how?" << std::endl;
+                    break;
+                }
+            case 1:
+                {
+                    std::cout << "No arguments" << std::endl;
+                    break;
+                }
+            case 2:
+                {
+                    std::cout << "One argument not supported, ignoring" << std::endl;
+                    break;
+                }
+            default:
+                {
+                    std::cout << "Too many arguments, ignoring";
+                }
+        }
+        std::cout << "Enter lower bound" << std::endl;
+        std::cout << "Enter upper bound" << std::endl;
+        lower_bound = getnumber();
+        upper_bound = getnumber();
+    }
+    else
+    {
+        std::string holdervalue;
+        std::cout << "Two arguments, interpreting" << std::endl;
+        std::cout << argv[1] << "Interpreting as lower bound: " << std::endl;
+        //ss << argv[1];
+        lower_bound << std::atoi(argv[1]);
+        std::cout << argv[2] << "Interpreting as upper bound: " << std::endl;
+        upper_bound << std::atoi(argv[2]);
+//        getline(std::cin, ss);
+//        lower_bound << ss;
+        std::cout << lower_bound << "Lower bound" << std::endl;
+        std::cout << upper_bound << "Upper bound" << std::endl;
+    }
 
     if (lower_bound < 1)
     {
