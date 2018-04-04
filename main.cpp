@@ -38,30 +38,33 @@ int main()
     int i;
     int j;
     bool NotPrime;
-    for(i = lower_bound+1; i<=upper_bound; i++)
+
+    for (i=lower_bound; i<=upper_bound; i++)
     {
-        NotPrime = true;
+        NotPrime = false;
+        // If even, then definitely not prime
         if (i%2==0)
         {
-            continue;
+            std::cout << " is not prime due to being even" << i << std::endl;
         }
-
-        //std::cout << i << std::endl;
-
-        for(j = i; j>lower_bound+1; j--)
+        else
         {
-            if (NotPrime == false)
+            for(j=upper_bound-1;j>=lower_bound;j--)
             {
-                break;
+                if (j%2==0)
+                {
+                    continue;
+                }
+                else if (i%j!=0)
+                {
+                    NotPrime = true;
+                    break;
+                }
             }
-            if (j%2!=0)
+            if(not NotPrime)
             {
-                NotPrime = true;
-                continue;
+                std::cout <<  " appears to be prime" << i << std::endl;
             }
-            //std::cout << j << std::endl;
-            if (i%j>0)
-                std::cout << i << " may be prime " << std::endl;
         }
     }
 }
