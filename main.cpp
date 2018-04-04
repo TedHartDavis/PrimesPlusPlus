@@ -3,14 +3,11 @@
 // Stolen from BasiCalc
 int getnumber ()
 {
-    //std::getline(std::cin, number);
     std::string placeholder;
     getline(std::cin, placeholder);
-    //number << std::atof << placeholder << std::endl;
     int number = atoi(placeholder.c_str());
     return number;
 }
-// End stolen
 
 int main()
 {
@@ -19,9 +16,6 @@ int main()
     std::cout << "Enter upper bound" << std::endl;
     lower_bound = getnumber();
     upper_bound = getnumber();
-    //std::cout << "fff" << std::endl;
-    //std::cout << lower_bound << std::endl;
-    //std::cout << upper_bound << std::endl;
 
     if (lower_bound < 1)
     {
@@ -47,34 +41,23 @@ int main()
         // If even, then definitely not prime
         if (i%2==0)
         {
-            //std::cout << " is not prime due to being even" << i << std::endl;
+            continue;
         }
         else
         {
             for(j=2;j<(i/2);j++)
             {
-                //std::cout << i << " i = " << " j = " << j << std::endl;
                 if (j%2==0)
                 {
-                    //std::cout << j << std::endl;
-                    //std::cout << "j is even" << std::endl;
-
-                    //continue;
+                    continue;
                 }
                 else if (i%j==0)
                 {
                     NotPrime = true;
-                    //std::cout << j << std::endl;
-                    //std::cout << i << std::endl;
-                    //std::cout << "breaking" << std::endl;
                     break;
                 }
-                else
-                {
-                    //std::cout << "no condition met" << std::endl;
-                }
             }
-            if(NotPrime==false)
+            if(! NotPrime)
             {
                 std::cout << i <<  " appears to be prime" << std::endl;
             }
