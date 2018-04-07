@@ -1,3 +1,6 @@
-Find primes, learn some things along the way, yes?
+(Probably not all too great) prime finder in C++.
 
-Yes, good.
+Goes through a range of numbers, given lower and upper bounds, and 
+finds all of the primes which fall within those confines.
+
+Accepts command-line arguments of lower and upper bounds.
