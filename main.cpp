@@ -65,6 +65,7 @@ int main(int argc, char **argv)
     else if (upper_bound <= lower_bound)
     {
         std::cout << "Upper bound too low" << std::endl;
+        return 1;
     }
     else
     {
@@ -102,5 +103,6 @@ int main(int argc, char **argv)
             }
         }
     }
+    return 0;
 }
 
