@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 //#include <sstream>
 
 
@@ -14,7 +15,6 @@ int getnumber ()
 // Arguments aaaa
 int main(int argc, char **argv)
 {
-    //std::stringstream ss;
     int lower_bound, upper_bound;
 
     //std::cout << argv[1] << std::endl;
@@ -51,15 +51,23 @@ int main(int argc, char **argv)
     }
     else
     {
+        std::istringstream ss;
+        std::istringstream ss1(argv[1]);
+        std::istringstream ss2(argv[2]);
         std::string holdervalue;
         std::cout << "Two arguments, interpreting" << std::endl;
         std::cout << argv[1] << "Interpreting as lower bound: " << std::endl;
         //ss << argv[1];
-        lower_bound << std::atoi(argv[1]);
+//        argv[1] >> ss;
+        //lower_bound << ss;
+        ss1 >> lower_bound;
+        //ss << argv[2];
         std::cout << argv[2] << "Interpreting as upper bound: " << std::endl;
-        upper_bound << std::atoi(argv[2]);
-//        getline(std::cin, ss);
-//        lower_bound << ss;
+        //upper_bound << ss2;
+        ss2 >> upper_bound;
+        //upper_bound << std::strtoi(argv[2]);
+        //getline(std::cin, ss);
+//        lower_bound << ss1;
         std::cout << lower_bound << "Lower bound" << std::endl;
         std::cout << upper_bound << "Upper bound" << std::endl;
     }
