@@ -1,4 +1,5 @@
 #include <iostream>
+// Need stringstream
 #include <sstream>
 
 // Stolen from BasiCalc
@@ -10,13 +11,9 @@ int getnumber ()
     return number;
 }
 
-// Arguments aaaa
 int main(int argc, char **argv)
 {
     int lower_bound, upper_bound;
-
-    //std::cout << argv[1] << std::endl;
-    //std::cout << argc << " arguments" << std::endl;
 
     if (argc != 3)
     {
@@ -81,7 +78,6 @@ int main(int argc, char **argv)
     for (i=lower_bound; i<=upper_bound; i++)
     {
         NotPrime = false;
-        // If even, then definitely not prime
         if (i%2==0)
         {
             continue;
