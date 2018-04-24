@@ -3,17 +3,17 @@
 #include <sstream>
 
 // Stolen from BasiCalc
-int getnumber ()
+long long getnumber ()
 {
     std::string placeholder;
     getline(std::cin, placeholder);
-    int number = atoi(placeholder.c_str());
+    long long number = std::stoll(placeholder.c_str());
     return number;
 }
 
-int main(int argc, char **argv)
+int main(long long argc, char **argv)
 {
-    int lower_bound, upper_bound;
+    long long lower_bound, upper_bound;
 
     if (argc != 3)
     {
@@ -48,10 +48,10 @@ int main(int argc, char **argv)
     {
         std::istringstream ss1(argv[1]);
         std::istringstream ss2(argv[2]);
-        std::cout << "Two arguments, interpreting" << std::endl;
-        std::cout << argv[1] << "Interpreting as lower bound: " << std::endl;
+        std::cout << "Two arguments, long longerpreting" << std::endl;
+        std::cout << argv[1] << "long longerpreting as lower bound: " << std::endl;
         ss1 >> lower_bound;
-        std::cout << argv[2] << "Interpreting as upper bound: " << std::endl;
+        std::cout << argv[2] << "long longerpreting as upper bound: " << std::endl;
         ss2 >> upper_bound;
         std::cout << "Lower bound: " << lower_bound << std::endl;
         std::cout << "Upper bound: " << upper_bound <<   std::endl;
@@ -72,8 +72,8 @@ int main(int argc, char **argv)
         std::cout << "Good" << std::endl;
     }
 
-    int i;
-    int j;
+    long long i;
+    long long j;
     bool NotPrime;
 
     for (i=lower_bound; i<=upper_bound; i++)
