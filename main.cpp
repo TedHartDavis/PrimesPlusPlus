@@ -48,10 +48,10 @@ int main(long long argc, char **argv)
     {
         std::istringstream ss1(argv[1]);
         std::istringstream ss2(argv[2]);
-        std::cout << "Two arguments, long longerpreting" << std::endl;
-        std::cout << argv[1] << "long longerpreting as lower bound: " << std::endl;
+        std::cout << "Two arguments, interpreting" << std::endl;
+        std::cout << argv[1] << "interpreting as lower bound: " << std::endl;
         ss1 >> lower_bound;
-        std::cout << argv[2] << "long longerpreting as upper bound: " << std::endl;
+        std::cout << argv[2] << "interpreting as upper bound: " << std::endl;
         ss2 >> upper_bound;
         std::cout << "Lower bound: " << lower_bound << std::endl;
         std::cout << "Upper bound: " << upper_bound <<   std::endl;
